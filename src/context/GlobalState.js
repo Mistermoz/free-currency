@@ -10,8 +10,8 @@ export const GlobalContext = createContext(initialState);
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
 
-  function loadCurrencies() {
-    CurrencyService.lastest().then((response) => {
+  function loadCurrencies(base, currenciesToConvert) {
+    CurrencyService.getCurrencies(base, currenciesToConvert).then((response) => {
       dispatch({
         type: 'LOAD_CURRENCIES',
         payload: response.data
