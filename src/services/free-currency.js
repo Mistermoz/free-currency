@@ -1,5 +1,7 @@
 import Freecurrencyapi from '@everapi/freecurrencyapi-js';
 
-const freecurrencyapi = new Freecurrencyapi('fca_live_hOVdyjfCL3W9KKe1ankPsQdUCrtC981gTiCkNwvS');
+/* Set Api Key here*/
+const freecurrencyapiKey = "";
+const freecurrencyapi = new Freecurrencyapi(freecurrencyapiKey);
 
 export default freecurrencyapi;

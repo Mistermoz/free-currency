@@ -12,6 +12,10 @@ export const GlobalProvider = ({ children }) => {
 
   function loadCurrencies(base, currenciesToConvert) {
     CurrencyService.getCurrencies(base, currenciesToConvert).then((response) => {
+      if (!response.data) {
+        throw response;
+      }
+      
       dispatch({
         type: 'LOAD_CURRENCIES',
         payload: response.data
